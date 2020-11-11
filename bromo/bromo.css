@@ -7,7 +7,7 @@ body, html{
 
 .bg{
 	/* The image used */
-	background-image: url("bromo.jpg");
+	background-image: url("https://raw.githubusercontent.com/btrianurdin/btrianurdin.github.io/master/bromo/bromo.jpg");
 
 	/* Full height */
 	height: 100%; 
