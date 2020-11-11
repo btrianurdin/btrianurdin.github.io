@@ -1,0 +1,63 @@
+*{
+	margin: 0;padding: 0;
+}
+body, html{
+	height: 100%;
+}
+
+.bg{
+	/* The image used */
+	background-image: url("bromo.jpg");
+
+	/* Full height */
+	height: 100%; 
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+}
+.bg .bg-effect{
+	position: absolute;
+	height: 100%;
+	background-color: rgba(52, 73, 94,0.2);
+	width: 100%;
+	z-index: 2;
+}
+.bg .content{
+	max-width: 720px;
+	width: 720px;
+	z-index: 3;
+	position: relative;
+	margin: 0 auto;
+
+
+}
+.bg h1{
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	text-align: center;
+	font-size: 60px;
+	margin-bottom: 130px;
+}
+.bg .btn{
+	text-align: center;
+}
+.bg .btn > .login{
+	background-color: #60A2D9;
+}
+.bg a{
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	font-family: arial;
+	padding: 10px;
+	margin: 5px 0;
+	border-radius: 30px;
+	width: 170px;
+	border: 2px solid #60A2D9;
+}
