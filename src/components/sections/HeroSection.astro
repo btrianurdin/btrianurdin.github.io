@@ -1,0 +1,38 @@
+---
+import HeroSocial from "../HeroSocial.astro";
+import Link from "../Link.astro";
+---
+
+<section class="hero">
+  <div class="xl:max-w-screen-xl px-4 h-screen flex justify-center items-center mx-auto">
+    <div
+      class="relative flex flex-col gap-8 justify-center items-start sm:items-center h-[80%] w-full mx-auto"
+    >
+      <Link
+        href="mailto:bagusfarizky89@gmail.com"
+        class="uppercase bg-blue-600 text-white flex gap-2 items-center px-3 py-2 rounded-full text-[10px] sm:text-xs md:mb-4"
+      >
+        get in touch
+      </Link>
+      <h1
+        class="text-3xl sm:text-4xl md:leading-[3.5rem] md:text-[54px] font-light"
+      >
+        I'am <span class="font-semibold block sm:inline-block"
+          >Bagus Trianurdin 👋</span
+        >
+      </h1>
+      <p class="text-sm sm:text-base md:text-xl font-light">
+        Crafting Web Apps, Debugging, and Resolving Issues
+      </p>
+      <HeroSocial />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  }
+</style>
