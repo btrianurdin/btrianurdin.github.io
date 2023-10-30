@@ -4,7 +4,9 @@ import Link from "../Link.astro";
 ---
 
 <section class="hero">
-  <div class="xl:max-w-screen-xl px-4 h-screen flex justify-center items-center mx-auto">
+  <div
+    class="xl:max-w-screen-xl px-4 h-screen flex justify-center items-center mx-auto"
+  >
     <div
       class="relative flex flex-col gap-8 justify-center items-start sm:items-center h-[80%] w-full mx-auto"
     >
@@ -17,12 +19,13 @@ import Link from "../Link.astro";
       <h1
         class="text-3xl sm:text-4xl md:leading-[3.5rem] md:text-[54px] font-light"
       >
-        I'am <span class="font-semibold block sm:inline-block"
-          >Bagus Trianurdin 👋</span
-        >
+        I'am
+        <span class="font-semibold block sm:inline-block">
+          Bagus Trianurdin <span class="hand">👋</span>
+        </span>
       </h1>
       <p class="text-sm sm:text-base md:text-xl font-light">
-        Crafting Web Apps, Debugging, and Resolving Issues
+        Crafting Web Apps // Debugging // Resolving Issues
       </p>
       <HeroSocial />
     </div>
@@ -34,5 +37,28 @@ import Link from "../Link.astro";
     background-color: #ffffff;
     background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  }
+
+  .hand {
+    display: inline-block;
+    animation: waving-hand 2s infinite;
+  }
+
+  @keyframes waving-hand {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(20deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(20deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
 </style>
