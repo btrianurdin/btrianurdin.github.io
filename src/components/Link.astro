@@ -4,15 +4,16 @@ interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
   isTargetBlank?: boolean;
 }
 
-const { href, ...props } = Astro.props;
+const { href, isTargetBlank, ...props } = Astro.props;
 
 const classes = ["inline-block", props.class];
 ---
 
 <a
   href={href}
-  target={props.isTargetBlank ? "_blank" : "_self"}
+  target={isTargetBlank ? "_blank" : "_self"}
   class:list={classes}
+  {...props}
 >
   <slot />
 </a>
