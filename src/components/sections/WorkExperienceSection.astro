@@ -1,0 +1,95 @@
+---
+const works = [
+  {
+    company: "PT. Kedata Indonesia Digital",
+    position: "Front-end Developer - Full-time",
+    startDate: "Jan 2023",
+    endDate: "Now",
+    description:
+      "Crafted the Kalkula web app for data analysis, Summaverse for document handling, and AI chatbot. Utilized Next.js and Tailwind CSS, collaborated for success, and seamlessly integrated backend APIs.",
+    jobDesc: [
+      "Developed the Kalkula web app for data analysis and processing needs.",
+      "Built Summaverse, a web app for document summarization, multi-document handling, and AI-based chatbot features.",
+      "Build a CMS dashboard for web content management",
+      "Build an internal dashboard to manage user data and payment data",
+      "Used Next, Nuxt and Tailwind CSS for web development",
+      "Collaborated with the team to ensure project success.",
+      "Integrated backend APIs into web applications seamlessly.",
+    ],
+    techStack: ["React", "Next.js", "Vue", "Nuxt", "Tailwind CSS"],
+  },
+  {
+    company: "PT. Kedata Indonesia Digital",
+    position: "Front-end Developer - Internship",
+    startDate: "Oct 2022",
+    endDate: "Jan 2023",
+    duration: "4 Months",
+    description:
+      "Built PT Kedata Digital's website and Kalkula web app, integrated CMS API, and gained front-end development experience.",
+    jobDesc: [
+      "Built the official website for PT Kedata Digital using Next.js and Tailwind CSS.",
+      "Developed the Kalkula web application for data analysts.",
+      "Integrated CMS API into the official website for seamless content management.",
+      "Gained hands-on experience in Front-end Development during an internship at PT Kedata Digital.",
+    ],
+    techStack: ["React", "Next.js", "Tailwind CSS"],
+  },
+  {
+    company: "PT. Nusantara Berkah Digital",
+    position: "Web Developer - Internship",
+    startDate: "May 2022",
+    endDate: "Aug 2022",
+    duration: "4 Months",
+    description:
+      "Developed a web-based PoS system and nutacloud.com dashboard, collaborating with developers for smooth execution. Used VueJS, Codeigniter, and MySQL for efficient front-end, back-end, and data management.",
+    jobDesc: [
+      "Developed a web-based Point of Sale (PoS) cashier system.",
+      "Performed API integration on the front end.",
+      "Utilized front-end technologies such as JavaScript with VueJS for web development.",
+      "Utilizing full stack technology for front end and back end using Codeigniter.",
+      "Processed thousands of customer data using MySQL as a database, ensuring efficient data management and retrieval.",
+    ],
+    techStack: ["VueJS", "Codeigniter", "MySQL"],
+  },
+];
+---
+
+<div class="box">
+  <div id="work-experience" class="-translate-y-[90px]"></div>
+  <h2 class="text-xl md:text-2xl font-semibold">Work Experience</h2>
+  <div class="mt-5 md:mt-10 flex flex-col gap-10">
+    {
+      works.map((work, idx) => (
+        <div class="flex flex-col gap-1.5">
+          <p class="">{work.company}</p>
+          <p class="font-semibold">{work.position}</p>
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <p>
+              {work.startDate} - {work.endDate}
+            </p>
+            {
+              work.duration && (
+                <p class="w-1 h-1 bg-gray-400 rounded-full" />
+                <p>{work.duration}</p>
+              )
+            }
+          </div>
+          <p class="mb-1 leading-7 text-sm md:text-base">{work.description}</p>
+          <div>
+            <ul class="list-disc pl-6 leading-7 text-sm md:text-base">
+              {work.jobDesc.map((desc) => (
+                <li>{desc}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="flex gap-2 mt-2">
+            {work.techStack.map((tech) => (
+              <p class="px-2 py-1 bg-gray-200 text-sm md:text-base rounded-md">{tech}</p>
+            ))}
+          </div>
+          {idx !== works.length - 1 && <div class="h-[2px] mt-8 bg-gray-200" />}
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,95 @@
+---
+const navMenu = [
+  {
+    name: "Works",
+    url: "#work-experience",
+  },
+  {
+    name: "Projects",
+    url: "#projects",
+  },
+  {
+    name: "Skills",
+    url: "#skills",
+  },
+];
+---
+
+<div id="content-layout" class="w-full mx-auto min-h-screen pb-10">
+  <nav class="navbar">
+    <ul class="menu flex items-center justify-center gap-8">
+      {
+        navMenu.map((item) => (
+          <li>
+            <a href={item.url} class="px-3 py-1.5 inline-block">
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div
+      class="active-box bg-black h-5 w-10 top-1/2 -translate-y-1/2 bg-opacity-10 absolute transition-all duration-300"
+    >
+    </div>
+  </nav>
+  <div
+    class="px-4 md:max-w-[70%] xl:max-w-[60%] 2xl:max-w-[55%] py-10 mx-auto flex flex-col gap-20"
+  >
+    <slot />
+  </div>
+  <p class="text-center mt-10 border-t border-gray-300 py-10">
+    &copy; {new Date().getFullYear()} - bnurd.com
+  </p>
+</div>
+<script>
+  document.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    const rect = navbar?.getBoundingClientRect();
+    if (rect?.top === 0) return navbar?.classList.add("scroll");
+    navbar?.classList.remove("scroll");
+  });
+
+  const navbar = document.querySelector(".navbar");
+  if (navbar) {
+    const elements = document.querySelectorAll(".box");
+
+    const observeNav = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          console.log(entry.target.children[0].id, " ", entry.isIntersecting);
+          if (entry.isIntersecting) {
+            const menu = navbar.querySelector(
+              `a[href="#${entry.target.children[0].id}"]`
+            );
+            const bounding = menu?.getBoundingClientRect();
+            const activeBox = navbar.querySelector(
+              ".active-box"
+            ) as HTMLElement;
+
+            if (activeBox && bounding) {
+              activeBox.style.left = `${bounding?.left - 4}px`;
+              activeBox.style.width = `${bounding?.width + 4}px`;
+              activeBox.style.height = `${bounding?.height}px`;
+            }
+          }
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    elements.forEach((element) => {
+      if (element) observeNav.observe(element);
+    });
+  }
+</script>
+<style>
+  .navbar {
+    @apply p-4 text-center sticky top-0 bg-gray-100 backdrop-filter backdrop-blur-lg bg-opacity-30;
+  }
+  .navbar.scroll {
+    @apply border-b border-b-gray-300;
+  }
+</style>

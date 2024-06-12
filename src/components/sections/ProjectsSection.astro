@@ -1,0 +1,97 @@
+---
+import GithubIcon from "../icons/GithubIcon.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+
+const projects = [
+  {
+    name: "Location Clustering",
+    year: "2024",
+    description:
+      "Implement a location clustering algorithm (supercluster) to group thousands of neighboring location points more efficiently on the map 📍🗺️.",
+    image: "/project-maps.png",
+    link: "https://map-clustering.vercel.app",
+    tech: ["NextJS", "Leaflet", "Supercluster"],
+  },
+  {
+    name: "Quran Hub",
+    year: "2024",
+    description:
+      "Dive into the Quran with Quran Hub – an app that's easy to use and customize. It's user-friendly, search for verses, bookmark your favorites, and read offline 🔥 ✨.",
+    image: "/project-quran-app.jpg",
+    link: "https://github.com/btrianurdin/quran-hub-flutter",
+    tech: ["Flutter", "Riverpod", "Hive"],
+  },
+  {
+    name: "Typing Test",
+    year: "2024",
+    description:
+      "Elevate your keyboard finesse with our engaging typing test application – a simple yet delightful journey to enhance your typing proficiency! Ready, set, type! ⌨️🚀",
+    image: "/project-typing.png",
+    link: "https://quran.bnurd.com",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    name: "Quran Web",
+    year: "2023",
+    description:
+      "Web-based Quran application offering seamless access to the holy text, enriched with features for easy navigation, search, and bookmarking 📖 🤲.",
+    image: "/project-quran.png",
+    link: "https://quran.bnurd.com",
+    tech: ["VueJS", "Tailwind CSS"],
+  },
+  {
+    name: "Wedding Invitation Web",
+    year: "2022",
+    description:
+      "A web-based wedding invitation project that allows users to design invitations with a variety of themes, ensuring every couple's special day is represented beautifully and memorably 🎉 ✨.",
+    image: "/project-invitee.png",
+    link: "https://github.com/btrianurdin/invitt",
+    tech: ["NextJS", "Tailwind CSS"],
+  },
+];
+---
+
+<div class="box">
+  <div id="projects" class="-translate-y-[90px]"></div>
+  <h2 class="text-xl md:text-2xl font-semibold">Projects</h2>
+  <div class="mt-5 md:mt-10">
+    <div class="grid md:grid-cols-2 gap-6">
+      {
+        projects.map((project) => (
+          <a
+            href={project.link}
+            class="flex flex-col gap-3 p-4 rounded-lg hover:bg-gray-200 group transition"
+          >
+            <img
+              src={project.image}
+              class="rounded-md overflow-hidden h-[250px] object-center object-cover"
+            />
+            <h3 class="text-lg font-semibold mt-2">{project.name}</h3>
+            <p class="h-[100px] line-4 w-full">{project.description}</p>
+            <div class="flex items-center gap-1">
+              <LinkIcon />
+              <p>{project.link.replace("https://", "")}</p>
+            </div>
+            <div class="flex gap-2">
+              {project.tech.map((tech) => (
+                <span class="px-2 py-1 bg-gray-200 group-hover:bg-gray-100 text-sm rounded-md">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </a>
+        ))
+      }
+      <a
+        href="https://github.com/btrianurdin"
+        class="flex flex-col justify-center items-center gap-3 p-4 rounded-lg hover:bg-gray-200 group transition"
+      >
+        <div class="w-10 h-10">
+          <GithubIcon />
+        </div>
+        <p class="text-lg">More on Github</p>
+        <p>https://github.com/btrianurdin</p>
+      </a>
+    </div>
+  </div>
+</div>

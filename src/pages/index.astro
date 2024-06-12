@@ -1,10 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/sections/HeroSection.astro";
+import WorkExperienceSection from "../components/sections/WorkExperienceSection.astro";
+import PageNavbar from "../components/common/PageNavbar.astro";
+import ProjectsSection from "../components/sections/ProjectsSection.astro";
+import SkillSection from "../components/sections/SkillSection.astro";
 ---
 
-<Layout title="Wanna be an engineer - Bagus Trianurdin">
+<Layout title="Wanna be a greet engineer - Trianurdin B">
   <HeroSection />
+  <PageNavbar>
+    <WorkExperienceSection />
+    <ProjectsSection />
+    <SkillSection />
+  </PageNavbar>
 </Layout>
-
 <style></style>

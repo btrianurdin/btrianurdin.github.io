@@ -1,0 +1,86 @@
+---
+const skills = [
+  {
+    img: "/tech/vue-logo.png",
+    name: "Vue.js",
+    size: "h-8",
+  },
+  {
+    img: "/tech/nuxt-logo.png",
+    name: "Nuxt.js",
+    size: "h-8",
+  },
+  {
+    img: "/tech/react-logo.png",
+    name: "React.js",
+    size: "h-8 ",
+  },
+  {
+    img: "/tech/next-logo.png",
+    name: "Next.js",
+    size: "h-3",
+  },
+  {
+    img: "/tech/astro-logo.png",
+    name: "Astro",
+    size: "w-20",
+  },
+  {
+    img: "/tech/ts-logo.png",
+    name: "TypeScript",
+    size: "h-8",
+  },
+  {
+    img: "/tech/dart-logo.png",
+    name: "Dart",
+    size: "h-8",
+  },
+  {
+    img: "/tech/flutter-logo.png",
+    name: "Flutter",
+    size: "h-8",
+  },
+  {
+    img: "/tech/tailwind-logo.png",
+    name: "Tailwind CSS",
+    size: "h-3",
+  },
+  {
+    img: "/tech/php-logo.png",
+    name: "PHP",
+    size: "h-8",
+  },
+  {
+    img: "/tech/laravel-logo.png",
+    name: "Laravel",
+    size: "h-8",
+  },
+  {
+    img: "/tech/node-logo.webp",
+    name: "NodeJS",
+    size: "h-8",
+  },
+];
+---
+
+<div class="box">
+  <div id="skills" class="-translate-y-[90px]"></div>
+  <h2 class="text-xl md:text-2xl font-semibold text-center">
+    I will be able to perform magic with
+  </h2>
+  <div class="mt-5 md:mt-10 flex flex-wrap justify-center items-center gap-8">
+    {
+      skills.map((skill) => (
+        <div class="flex flex-col gap-3 items-center justify-center">
+          <img
+            src={skill.img}
+            alt={skill.name}
+            class:list={["h-8 object-contain", skill.size]}
+          />
+          <p class="text-sm">{skill.name}</p>
+        </div>
+      ))
+    }
+  </div>
+  <p class="text-center text-lg mt-8">And growth is on the way...</p>
+</div>
