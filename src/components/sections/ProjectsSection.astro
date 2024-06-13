@@ -60,13 +60,21 @@ const projects = [
         projects.map((project) => (
           <a
             href={project.link}
-            class="flex flex-col gap-3 p-4 rounded-lg hover:bg-gray-200 group transition"
+            class="flex flex-col items-start gap-3 p-4 rounded-lg hover:bg-gray-200 group transition"
           >
-            <img
-              src={project.image}
-              class="rounded-md overflow-hidden h-[250px] object-center object-cover"
-            />
-            <h3 class="text-lg font-semibold mt-2">{project.name}</h3>
+            <div class="relative h-[250px] w-full z-0">
+              <img
+                src={project.image}
+                class="rounded-md w-full h-full object-center object-cover"
+              />
+              <div class="bottom-3 right-3 absolute bg-blue-600 text-white shadow-lg py-1.5 px-2 text-sm rounded-md">
+                {project.year}
+              </div>
+            </div>
+            {/* <p class="-mb-2 px-2 py-1 bg-gray-200 group-hover:bg-gray-100 text-sm rounded-md">
+              {project.year}
+            </p> */}
+            <h3 class="text-lg font-semibold">{project.name}</h3>
             <p class="h-[100px] line-4 w-full">{project.description}</p>
             <div class="flex items-center gap-1">
               <LinkIcon />

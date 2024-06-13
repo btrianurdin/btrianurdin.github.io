@@ -29,7 +29,7 @@ const navMenu = [
       }
     </ul>
     <div
-      class="active-box bg-black h-5 w-10 top-1/2 -translate-y-1/2 bg-opacity-10 absolute transition-all duration-300"
+      class="active-box bg-black h-5 w-10 top-1/2 -translate-y-1/2 bg-opacity-10 rounded-md absolute transition-all duration-300"
     >
     </div>
   </nav>
@@ -68,7 +68,7 @@ const navMenu = [
             ) as HTMLElement;
 
             if (activeBox && bounding) {
-              activeBox.style.left = `${bounding?.left - 4}px`;
+              activeBox.style.left = `${bounding?.left - 3}px`;
               activeBox.style.width = `${bounding?.width + 4}px`;
               activeBox.style.height = `${bounding?.height}px`;
             }
@@ -87,7 +87,7 @@ const navMenu = [
 </script>
 <style>
   .navbar {
-    @apply p-4 text-center sticky top-0 bg-gray-100 backdrop-filter backdrop-blur-lg bg-opacity-30;
+    @apply p-4 z-10 text-center sticky top-0 bg-gray-100 backdrop-filter backdrop-blur-lg bg-opacity-30;
   }
   .navbar.scroll {
     @apply border-b border-b-gray-300;
